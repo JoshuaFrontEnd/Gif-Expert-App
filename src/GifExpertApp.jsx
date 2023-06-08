@@ -1,5 +1,6 @@
 // Cuando se llame un Hook especifico de React, se debe de importar desde la libreria
 import { useState } from "react";
+import { AddCategory } from "./components/AddCategory";
 
 export const GifExpertApp = () => {
 
@@ -24,6 +25,7 @@ export const GifExpertApp = () => {
       <h1>GifExpertApp</h1>
 
       {/* Input */}
+      <AddCategory />
 
       {/* Listado de Gif's */}
       <button onClick={ onAddCategory }>Agregar</button>
@@ -48,5 +50,7 @@ export const GifExpertApp = () => {
   Más información acá: https://es.react.dev/learn/state-a-components-memory
 
   - Cuando se setean multiples variables de estado React para identificarlas crea un array con cada variable, de esta manera puede identificarlas mediante su indice, debido a esto, no se deben setear variables de estado adentro de funciones o ciclos iterativos
+
+  - Cada componente puede tener su propio estado, es decir sus propios Hooks
 ---------------------------------------------------------------- */
 
