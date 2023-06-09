@@ -14,9 +14,11 @@ export const GifExpertApp = () => {
 
     Entonces para poder insertar un nuevo elemento, en este caso al array de "categories", hay que crear un nuevo estado del componente, osea basicamente crear otro arreglo y para eso usamos el elemento "setCategories"
   */
-  const onAddCategory = () => {
+  const onAddCategory = ( newCategory ) => {
     // Al usar "setCategories" copiamos el arreglo y le agregamos un valor nuevo, en este caso al principio del nuevo arreglo
-    // setCategories(['Resident Evil', ...categories]);
+    setCategories([newCategory, ...categories]);
+
+    console.log( newCategory );
   }
 
   return (
@@ -26,7 +28,11 @@ export const GifExpertApp = () => {
 
       {/* Input */}
       {/* Envío al componente hijo "AddCategory" la función "setCategories" */}
-      <AddCategory setCategories={ setCategories }/>
+      {/* Esta es un manera de hacerlo pero no es la mas recomendable, asi que la voy a comentar y mas abajo creare la forma recomendable */}
+      {/* <AddCategory setCategories={ setCategories }/> */}
+
+      {/* Esta manera es mas recomendable, debido a que la propiedad que creamos, es semanticamente mas acorde a lo que estamos haciendo, es decir, estamos dando a entender que con esa propiedad vamos a agregar nuevas categorías */}
+      <AddCategory onNewCategory={ onAddCategory }/>
 
       {/* Listado de Gif's */}
       {/* <button onClick={ onAddCategory }>Agregar</button> */}

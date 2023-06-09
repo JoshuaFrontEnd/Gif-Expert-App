@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
 {/* Recibo desde el componente padre "GifExpertApp" la función "setCategories" */}
-export const AddCategory = ({ setCategories }) => {
+// export const AddCategory = ({ setCategories }) => {
+
+{/* Recibo desde el componente padre "GifExpertApp" la función "onNewCategory", esto lo estoy haciendo asi, porque es la manera recomendada de hacerlo */}
+export const AddCategory = ({ onNewCategory }) => {
 
   const [inputValue, setInputValue] = useState('One Punch');
 
@@ -15,10 +18,13 @@ export const AddCategory = ({ setCategories }) => {
     event.preventDefault();
 
     // Validar que en el input no se ingresen menos de dos caracteres
-    if ( inputValue.length <= 1 ) return;
+    if ( inputValue.trim().length <= 1 ) return;
 
     // Recibo las categorias actuales desde "setCategories" y las inserto junto al valor del input
-    setCategories( categories => [ inputValue, ...categories ]);
+    // setCategories( categories => [ inputValue, ...categories ]);
+
+    // De esa manera es mucho mas sencillo obtener las categorías
+    onNewCategory( inputValue.trim() );
 
     // "Limpiar" el valor/texto del input al agregar un nuevo valor
     setInputValue('');
