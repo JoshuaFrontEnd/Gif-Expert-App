@@ -18,7 +18,7 @@ export const GifExpertApp = () => {
 
     // Validación para no repetir las Keys
     // https://www.udemy.com/course/react-cero-experto/learn/lecture/32007058#questions/17742002
-    if (categories.find(cat => cat.toLowerCase() === newCat.toLowerCase())) return;
+    if (categories.find(cat => cat.toLowerCase() === newCategory.toLowerCase())) return;
 
     // Al usar "setCategories" copiamos el arreglo y le agregamos un valor nuevo, en este caso al principio del nuevo arreglo
     setCategories([newCategory, ...categories]);
