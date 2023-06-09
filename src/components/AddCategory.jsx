@@ -6,7 +6,7 @@ import { useState } from 'react';
 {/* Recibo desde el componente padre "GifExpertApp" la función "onNewCategory", esto lo estoy haciendo asi, porque es la manera recomendada de hacerlo */}
 export const AddCategory = ({ onNewCategory }) => {
 
-  const [inputValue, setInputValue] = useState('One Punch');
+  const [inputValue, setInputValue] = useState();
 
   // Para obtener el evento accedo con "event.target.value" o lo puedo desestructurar:
   const onInputChange = ({ target }) => {

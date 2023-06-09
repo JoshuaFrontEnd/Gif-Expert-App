@@ -15,6 +15,11 @@ export const GifExpertApp = () => {
     Entonces para poder insertar un nuevo elemento, en este caso al array de "categories", hay que crear un nuevo estado del componente, osea basicamente crear otro arreglo y para eso usamos el elemento "setCategories"
   */
   const onAddCategory = ( newCategory ) => {
+
+    // Validación para no repetir las Keys
+    // https://www.udemy.com/course/react-cero-experto/learn/lecture/32007058#questions/17742002
+    if (categories.find(cat => cat.toLowerCase() === newCat.toLowerCase())) return;
+
     // Al usar "setCategories" copiamos el arreglo y le agregamos un valor nuevo, en este caso al principio del nuevo arreglo
     setCategories([newCategory, ...categories]);
 
