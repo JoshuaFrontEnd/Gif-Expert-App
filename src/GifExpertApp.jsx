@@ -16,7 +16,7 @@ export const GifExpertApp = () => {
   */
   const onAddCategory = () => {
     // Al usar "setCategories" copiamos el arreglo y le agregamos un valor nuevo, en este caso al principio del nuevo arreglo
-    setCategories(['Resident Evil', ...categories]);
+    // setCategories(['Resident Evil', ...categories]);
   }
 
   return (
@@ -25,10 +25,11 @@ export const GifExpertApp = () => {
       <h1>GifExpertApp</h1>
 
       {/* Input */}
-      <AddCategory />
+      {/* Envío al componente hijo "AddCategory" la función "setCategories" */}
+      <AddCategory setCategories={ setCategories }/>
 
       {/* Listado de Gif's */}
-      <button onClick={ onAddCategory }>Agregar</button>
+      {/* <button onClick={ onAddCategory }>Agregar</button> */}
       <ol>
         {/* Cuando se utilizan metodos para recorrer arreglos (como "map" por ejemplo) React nos pide asignar obligatoriamente un atributo de nombre "key" de valor unico al elemento que será iterado, de esta manera React puede identificar que elementos han cambiado de manera dinamica
 
