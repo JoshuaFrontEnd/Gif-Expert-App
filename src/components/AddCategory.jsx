@@ -35,7 +35,8 @@ export const AddCategory = ({ onNewCategory }) => {
       <input
         type="text"
         placeholder="Buscar gifs"
-        value={ inputValue }
+        // Evitando el warning de consola que avisa sobre el cambio de valor undefined a definido
+        value =  { inputValue || ''}
         onChange={ onInputChange }
       />
     </form>
