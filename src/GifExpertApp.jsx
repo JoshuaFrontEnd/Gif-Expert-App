@@ -1,6 +1,7 @@
 // Cuando se llame un Hook especifico de React, se debe de importar desde la libreria
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifExpertApp = () => {
 
@@ -41,14 +42,20 @@ export const GifExpertApp = () => {
 
       {/* Listado de Gif's */}
       {/* <button onClick={ onAddCategory }>Agregar</button> */}
-      <ol>
+      {/* <ol> */}
         {/* Cuando se utilizan metodos para recorrer arreglos (como "map" por ejemplo) React nos pide asignar obligatoriamente un atributo de nombre "key" de valor unico al elemento que será iterado, de esta manera React puede identificar que elementos han cambiado de manera dinamica
 
         Más información acá: https://www.escuelafrontend.com/prop-key-en-react
 
         */}
-        { categories.map( category => <li key={ category }>{ category }</li> )}
-      </ol>
+        {/* { categories.map( category => <li key={ category }>{ category }</li> )} */}
+      {/* </ol> */}
+      {
+        categories.map( category =>
+          <GifGrid key={ category } category={ category } />
+        )
+      }
+
     </>
   )
 }
