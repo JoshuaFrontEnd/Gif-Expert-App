@@ -53,4 +53,9 @@ export const AddCategory = ({ onNewCategory }) => {
   donde tenemos una función con el primer argumento igual al parametro de la funcion que quiero ejecutar, esto se puede refactorizar escribiendolo de la siguiente manera:
 
   onSubmit={ onSubmit }
+
+  - En los archivos .jsx, cuando queremos agregar una clase CSS a un elemento HTML no podemos usar el atributo "class", ya que "class" es una palabra reservada para hacer clases en Javascript, en su lugar debemos usar "className", ejemplo:
+
+  <div className="clase-css">Hola Mundo</div>"
+
 ---------------------------------------------------------------- */
