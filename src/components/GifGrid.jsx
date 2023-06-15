@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs";
+// import { getGifs } from "../helpers/getGifs";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifItem } from "./GifItem";
 
 export const GifGrid = ({ category }) => {
@@ -28,18 +29,9 @@ export const GifGrid = ({ category }) => {
   }
 ---------------------------------------------------------------- */
 
-  const [images, setImages] = useState([]);
+  const { images, isLoading } = useFetchGifs( category );
 
-  const getImages = async() => {
-    const newImages = await getGifs( category );
-    setImages( newImages );
-  }
-
-  // El Hook Effect, es un Hook de React que sirve para disparar eventos secundarios, ¿Qué se entiende por efecto secundario? Se entiende un proceso que quiero ejecutar cuando algo suceda, por ejemplo: Cuando la categoría cambie quiero disparar un efecto, cuando el componente se renderice por primera vez quiero disparar un efecto, etc
-  // https://es.react.dev/reference/react#effect-hooks
-  useEffect(() => {
-    getImages();
-  }, [])
+  console.log( { isLoading } );
 
   return (
     <>

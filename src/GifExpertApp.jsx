@@ -73,5 +73,11 @@ export const GifExpertApp = () => {
   - Cada componente puede tener su propio estado, es decir sus propios Hooks
 
   - Nunca se debe de colocar la ejecución de una función directamente en un "Functional Component", porque cada vez que se renderiza el "Functional Component" se ejectutara la función, por ejemplo si tenemos una llamada HTTP dentro de un "Functional Component", cada vez que se renderice, se ejecutara la petición, volviendo lenta la ejecución, ejemplo archivo: "components/GifGrid.jsx"
+
+  - Component: Una función que renderiza una parte de la aplicación cuando cambia el estado de algo (Usando hooks)
+
+  - Custom Hook: Una función que hace algo especifica utilizando el estado (hooks) pero NO renderiza
+
+  - Helper: Como su nombre lo induce, una función que ayuda a hacer un proceso especifico, pero no utiliza el estado
 ---------------------------------------------------------------- */
 
